@@ -1,0 +1,31 @@
+//===============================
+// BANCO DE DADOS LOCAL
+//===============================
+
+function salvar(chave,dados){
+
+localStorage.setItem(
+
+chave,
+
+JSON.stringify(dados)
+
+);
+
+}
+
+function carregar(chave){
+
+return JSON.parse(
+
+localStorage.getItem(chave)
+
+)||[];
+
+}
+
+function apagar(chave){
+
+localStorage.removeItem(chave);
+
+}
