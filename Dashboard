@@ -1,31 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard - FrotaPM</title>
-
-<link rel="stylesheet" href="../../assets/css/dashboard.css">
+<title>Dashboard | FrotaPM</title>
 
 <link rel="stylesheet" href="../../assets/css/menu.css">
+<link rel="stylesheet" href="../../assets/css/dashboard.css">
+<link rel="stylesheet" href="../../assets/css/cards.css">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
-
 <body>
-
-
-<!-- MENU LATERAL -->
 
 <aside class="sidebar">
 
@@ -37,311 +34,173 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </div>
 
-
 <ul>
 
-<li class="ativo">
-
+<li class="ativo" onclick="location.href='index.html'">
 <i class="fa-solid fa-house"></i>
-
 Dashboard
-
 </li>
 
-
-<li>
-
+<li onclick="location.href='../viaturas/index.html'">
 <i class="fa-solid fa-car"></i>
-
 Viaturas
-
 </li>
 
-
-<li>
-
+<li onclick="location.href='../manutencao/index.html'">
 <i class="fa-solid fa-screwdriver-wrench"></i>
-
 Manutenção
-
 </li>
 
-
-<li>
-
+<li onclick="location.href='../rastreamento/index.html'">
 <i class="fa-solid fa-location-dot"></i>
-
 Rastreamento
-
 </li>
 
-
 <li>
-
-<i class="fa-solid fa-calendar"></i>
-
-Agenda
-
-</li>
-
-
-<li>
-
-<i class="fa-solid fa-box"></i>
-
-Estoque
-
-</li>
-
-
-<li>
-
 <i class="fa-solid fa-chart-column"></i>
-
 Relatórios
-
 </li>
-
-
-<li>
-
-<i class="fa-solid fa-users"></i>
-
-Usuários
-
-</li>
-
 
 </ul>
 
-
 </aside>
-
-
-
-<!-- CONTEÚDO -->
-
 
 <main>
 
-
-<header class="top">
-
-<h1>
-Dashboard
-</h1>
-
+<header class="cabecalho">
 
 <div>
 
-<i class="fa-solid fa-bell"></i>
+<h1>Dashboard</h1>
+
+<p>Sistema de Gestão da Frota da Polícia Militar</p>
+
+</div>
+
+<div class="usuario">
+
+<i class="fa-solid fa-user-police"></i>
 
 Administrador
 
 </div>
 
-
 </header>
 
+<section class="dashboardCards">
 
-
-<section class="cards">
-
-
-<div class="card">
+<div class="cardSistema">
 
 <i class="fa-solid fa-car"></i>
 
 <div>
 
-<h3>Total de Viaturas</h3>
+<h2 id="totalViaturas">0</h2>
 
-<strong id="total">
-
-128
-
-</strong>
+<p>Total de Viaturas</p>
 
 </div>
 
 </div>
 
+<div class="cardSistema">
 
-
-<div class="card verde">
-
-<i class="fa-solid fa-check"></i>
+<i class="fa-solid fa-circle-check"></i>
 
 <div>
 
-<h3>Disponíveis</h3>
+<h2 id="disponiveis">0</h2>
 
-<strong>
-
-113
-
-</strong>
+<p>Disponíveis</p>
 
 </div>
 
 </div>
 
-
-
-<div class="card amarelo">
+<div class="cardSistema">
 
 <i class="fa-solid fa-screwdriver-wrench"></i>
 
 <div>
 
-<h3>Manutenção</h3>
+<h2 id="manutencao">0</h2>
 
-<strong>
-
-9
-
-</strong>
+<p>Em Manutenção</p>
 
 </div>
 
 </div>
 
+<div class="cardSistema">
 
-
-<div class="card vermelho">
-
-<i class="fa-solid fa-triangle-exclamation"></i>
+<i class="fa-solid fa-location-dot"></i>
 
 <div>
 
-<h3>Alertas</h3>
+<h2 id="patrulhamento">0</h2>
 
-<strong>
-
-4
-
-</strong>
+<p>Patrulhamento</p>
 
 </div>
 
 </div>
-
 
 </section>
-
-
-
 
 <section class="graficos">
 
-
 <div class="grafico">
 
-<h2>
+<h3>Distribuição da Frota</h3>
 
-Disponibilidade da Frota
-
-</h2>
-
-<canvas id="graficoFrota"></canvas>
+<canvas id="graficoPizza"></canvas>
 
 </div>
 
-
-
 <div class="grafico">
 
-<h2>
+<h3>Custos Mensais</h3>
 
-Manutenções
-
-</h2>
-
-<canvas id="graficoManutencao"></canvas>
+<canvas id="graficoLinha"></canvas>
 
 </div>
 
-
 </section>
 
+<section class="inferior">
 
+<div class="alertas">
 
+<h3>Alertas</h3>
 
-<section class="tabela">
+<ul id="listaAlertas">
 
+<li>Nenhum alerta encontrado.</li>
 
-<h2>
+</ul>
 
-Últimas Manutenções
+</div>
 
-</h2>
+<div class="miniMapa">
 
+<h3>Localização Geral</h3>
 
-<table>
+<div id="mapaMini"></div>
 
-
-<tr>
-
-<th>Viatura</th>
-
-<th>Serviço</th>
-
-<th>Status</th>
-
-<th>Data</th>
-
-</tr>
-
-
-<tr>
-
-<td>230</td>
-
-<td>Troca de óleo</td>
-
-<td class="verdeTexto">
-
-Concluído
-
-</td>
-
-<td>25/07/2026</td>
-
-</tr>
-
-
-<tr>
-
-<td>245</td>
-
-<td>Revisão</td>
-
-<td class="amareloTexto">
-
-Em andamento
-
-</td>
-
-<td>24/07/2026</td>
-
-</tr>
-
-
-
-</table>
-
+</div>
 
 </section>
-
-
 
 </main>
 
-
-
 <script src="../../assets/js/dashboard.js"></script>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 </body>
 
 </html>
+
+
+
+
