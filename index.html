@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrotaPM - Sistema de Gestão de Frota</title>
 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h1>FrotaPM</h1>
+
+<h3>Polícia Militar de Blumenau</h3>
+
+<input
+type="text"
+id="usuario"
+placeholder="Usuário">
+
+<input
+type="password"
+id="senha"
+placeholder="Senha">
+
+<button onclick="login()">
+
+Entrar
+
+</button>
+
+<p id="erro"></p>
+
+</div>
+
+</div>
+
+<script src="assets/js/login.js"></script>
+
+</body>
+
+</html>
