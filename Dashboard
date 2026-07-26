@@ -1,1 +1,347 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - FrotaPM</title>
+
+<link rel="stylesheet" href="../../assets/css/dashboard.css">
+
+<link rel="stylesheet" href="../../assets/css/menu.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- MENU LATERAL -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h2>FrotaPM</h2>
+
+</div>
+
+
+<ul>
+
+<li class="ativo">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-car"></i>
+
+Viaturas
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+Manutenção
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Rastreamento
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-calendar"></i>
+
+Agenda
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-box"></i>
+
+Estoque
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-chart-column"></i>
+
+Relatórios
+
+</li>
+
+
+<li>
+
+<i class="fa-solid fa-users"></i>
+
+Usuários
+
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+<!-- CONTEÚDO -->
+
+
+<main>
+
+
+<header class="top">
+
+<h1>
+Dashboard
+</h1>
+
+
+<div>
+
+<i class="fa-solid fa-bell"></i>
+
+Administrador
+
+</div>
+
+
+</header>
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<i class="fa-solid fa-car"></i>
+
+<div>
+
+<h3>Total de Viaturas</h3>
+
+<strong id="total">
+
+128
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="card verde">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+
+<h3>Disponíveis</h3>
+
+<strong>
+
+113
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="card amarelo">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+<div>
+
+<h3>Manutenção</h3>
+
+<strong>
+
+9
+
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="card vermelho">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<div>
+
+<h3>Alertas</h3>
+
+<strong>
+
+4
+
+</strong>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="graficos">
+
+
+<div class="grafico">
+
+<h2>
+
+Disponibilidade da Frota
+
+</h2>
+
+<canvas id="graficoFrota"></canvas>
+
+</div>
+
+
+
+<div class="grafico">
+
+<h2>
+
+Manutenções
+
+</h2>
+
+<canvas id="graficoManutencao"></canvas>
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="tabela">
+
+
+<h2>
+
+Últimas Manutenções
+
+</h2>
+
+
+<table>
+
+
+<tr>
+
+<th>Viatura</th>
+
+<th>Serviço</th>
+
+<th>Status</th>
+
+<th>Data</th>
+
+</tr>
+
+
+<tr>
+
+<td>230</td>
+
+<td>Troca de óleo</td>
+
+<td class="verdeTexto">
+
+Concluído
+
+</td>
+
+<td>25/07/2026</td>
+
+</tr>
+
+
+<tr>
+
+<td>245</td>
+
+<td>Revisão</td>
+
+<td class="amareloTexto">
+
+Em andamento
+
+</td>
+
+<td>24/07/2026</td>
+
+</tr>
+
+
+
+</table>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<script src="../../assets/js/dashboard.js"></script>
+
+
+</body>
+
+</html>
