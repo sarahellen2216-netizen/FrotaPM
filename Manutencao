@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manutenção | FrotaPM</title>
+
+<link rel="stylesheet" href="../../assets/css/menu.css">
+<link rel="stylesheet" href="../../assets/css/manutencao.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+<div class="logo">
+<i class="fa-solid fa-shield-halved"></i>
+<h2>FrotaPM</h2>
+</div>
+
+<ul>
+
+<li onclick="location.href='../dashboard/index.html'">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li onclick="location.href='../viaturas/index.html'">
+<i class="fa-solid fa-car"></i>
+Viaturas
+</li>
+
+<li class="ativo">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Manutenção
+</li>
+
+<li onclick="location.href='../rastreamento/index.html'">
+<i class="fa-solid fa-location-dot"></i>
+Rastreamento
+</li>
+
+</ul>
+
+</aside>
+
+<main>
+
+<header>
+
+<h1>Ordens de Serviço</h1>
+
+<button onclick="abrirModal()">
+
+<i class="fa-solid fa-plus"></i>
+
+Nova Ordem
+
+</button>
+
+</header>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>OS</th>
+
+<th>Viatura</th>
+
+<th>Tipo</th>
+
+<th>Responsável</th>
+
+<th>Status</th>
+
+<th>Custo</th>
+
+<th>Ações</th>
+
+</tr>
+
+</thead>
+
+<tbody id="listaOS">
+
+</tbody>
+
+</table>
+
+</main>
+
+<div class="modal" id="modal">
+
+<div class="conteudo">
+
+<h2>Nova Ordem de Serviço</h2>
+
+<input id="viatura" placeholder="Viatura">
+
+<select id="tipo">
+
+<option>Preventiva</option>
+
+<option>Corretiva</option>
+
+</select>
+
+<input id="responsavel" placeholder="Responsável">
+
+<input id="custo" type="number" placeholder="Custo">
+
+<select id="status">
+
+<option>Aberta</option>
+
+<option>Em andamento</option>
+
+<option>Concluída</option>
+
+</select>
+
+<textarea
+id="descricao"
+placeholder="Descrição do serviço"></textarea>
+
+<div class="botoes">
+
+<button onclick="salvarOS()">
+
+Salvar
+
+</button>
+
+<button onclick="fecharModal()">
+
+Cancelar
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../../assets/js/manutencao.js"></script>
+
+</body>
+
+</html>
